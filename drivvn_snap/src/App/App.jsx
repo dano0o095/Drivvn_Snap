@@ -18,7 +18,7 @@ function App(props) {
     <div class="App container">
       <h1>SNAP!</h1>
       <CardArea />
-      <button type="button" className="btn btn-primary" onClick={() => handleClick()}>Primary</button>
+      <button type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
     </div>
   )
 }
