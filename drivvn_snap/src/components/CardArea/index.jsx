@@ -4,6 +4,7 @@ import { setNewCard } from '../../store/cards/actions'
 
 const mapStateToProps = state => ({
   newCard: state.cards.newCard,
+  prevCard: state.cards.prevCard,
 })
 
 const mapDispatchToProps = dispatch => ({

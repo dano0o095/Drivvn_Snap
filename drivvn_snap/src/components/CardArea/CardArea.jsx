@@ -12,7 +12,7 @@ const CardArea = props => {
 
   return (
     <div className="container">
-      <img src={newCard?.image} />
+      <img src={prevCard?.image} />
       <img src={newCard?.image} />
     </div>
   )

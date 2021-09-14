@@ -9,6 +9,7 @@ function App(props) {
   const handleClick = () => {
     api.drawCard()
       .then(res => {
+        props.setPrevCard(props.newCard)
         props.setNewCard(res.cards[0])
       })
   }
