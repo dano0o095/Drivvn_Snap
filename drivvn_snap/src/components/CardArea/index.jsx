@@ -1,25 +1,15 @@
-import React, { useEffect } from 'react'
-import propTypes from 'prop-types'
+import { connect } from 'react-redux'
+import CardArea from './CardArea'
+import { setNewCard } from '../../store/cards/actions'
 
-import api from '../../utils/api'
+const mapStateToProps = state => ({
+  newCard: state.cards.newCard,
+})
 
-const CardArea = props => {
-  const { newCard, prevCard } = props
+const mapDispatchToProps = dispatch => ({
+  setNewCard: (state) => {
+    dispatch(setNewCard(state))
+  },
+})
 
-  useEffect(() => {
-    api.getNewDeck()
-  }, [])
-
-  return (
-    <div className="container">
-      <img src={newCard?.image} />
-      <img src={newCard?.image} />
-    </div>
-  )
-}
-
-CardArea.propTypes = {
-
-}
-
-export default CardArea
+export default connect(mapStateToProps, mapDispatchToProps)(CardArea)
