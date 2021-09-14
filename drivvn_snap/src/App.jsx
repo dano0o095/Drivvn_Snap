@@ -1,18 +1,25 @@
+import React, { useState } from 'react'
+
 import './App.css'
 import CardArea from './components/CardArea'
 import api from './utils/api'
 
 function App() {
+  const [newCard, setNewCard] = useState({})
+
   const handleClick = () => {
-    console.log('here')
     api.drawCard()
+      .then(res => {
+        console.log('res:', res)
+        setNewCard(res.cards[0])
+      })
   }
 
   return (
-    <div className="App">
+    <div class="App container">
       <h1>SNAP!</h1>
-      <CardArea />
-      <button type="button" class="btn btn-primary" onClick={() => handleClick()}>Primary</button>
+      <CardArea newCard={newCard} />
+      <button type="button" className="btn btn-primary" onClick={() => handleClick()}>Primary</button>
     </div>
   )
 }

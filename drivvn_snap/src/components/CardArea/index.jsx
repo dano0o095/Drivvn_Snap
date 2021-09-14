@@ -4,14 +4,16 @@ import propTypes from 'prop-types'
 import api from '../../utils/api'
 
 const CardArea = props => {
+  const { newCard, prevCard } = props
 
   useEffect(() => {
     api.getNewDeck()
   }, [])
 
   return (
-    <div>
-      CardArea
+    <div className="container">
+      <img src={newCard?.image} />
+      <img src={newCard?.image} />
     </div>
   )
 }

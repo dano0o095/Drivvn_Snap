@@ -16,7 +16,6 @@ const api = {
   drawCard() {
     return fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`)
       .then(response => response.json())
-      .then(data => console.log(data))
       .catch(error => catchErrors(error))
   }
 }
