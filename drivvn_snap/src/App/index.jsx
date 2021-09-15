@@ -4,7 +4,7 @@ import { setNewCard, setRemainingCardCount } from '../store/cards/actions'
 
 const mapStateToProps = state => ({
   newCard: state.cards.newCard,
-  remainingCardscount: state.cards.remaining
+  remaningCardsCount: state.cards.remaining
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -6,7 +6,7 @@ import api from '../utils/api'
 import Results from '../components/Results'
 
 function App(props) {
-  const { setNewCard, setRemainingCardCount, remaningcardsCount } = props
+  const { setNewCard, setRemainingCardCount, remaningCardsCount } = props
 
   const handleClick = () => {
     api.drawCard()
@@ -20,7 +20,8 @@ function App(props) {
     <div class="App container">
       <h1>SNAP!</h1>
       <CardArea />
-      {remaningcardsCount > 0
+      <h6>{`${remaningCardsCount} cards remaining`}</h6>
+      {remaningCardsCount !== 0
         && <button type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
         || <Results />
       }
