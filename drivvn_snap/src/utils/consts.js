@@ -18,5 +18,5 @@ export let VALUES = {
   "FOUR": 4,
   "THREE": 4,
   "TWO": 4,
-  "ONE": 4
+  "ACE": 4
 }

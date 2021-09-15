@@ -33,27 +33,79 @@ const CardArea = props => {
   }, [prevCard, newCard])
 
   useEffect(() => {
-    console.log('prev:', prevCard)
     switch (prevCard.suit) {
       case "HEARTS":
         SUITS.HEARTS--
-        console.log('HEARTS COUNT LEFT:', SUITS.HEARTS)
         setSuitProb(`${SUITS.HEARTS} in ${remaningCardsCount - 1}`)
         break
       case "DIAMONDS":
         SUITS.DIAMONDS--
-        console.log('DIAMONDS COUNT LEFT:', SUITS.DIAMONDS)
         setSuitProb(`${SUITS.DIAMONDS} in ${remaningCardsCount - 1}`)
         break
       case "CLUBS":
         SUITS.CLUBS--
-        console.log('CLUBS COUNT LEFT:', SUITS.CLUBS)
         setSuitProb(`${SUITS.CLUBS} in ${remaningCardsCount - 1}`)
         break
       case "SPADES":
         SUITS.SPADES--
-        console.log('SPADE COUNT LEFT:', SUITS.SPADES)
         setSuitProb(`${SUITS.SPADES} in ${remaningCardsCount - 1}`)
+        break
+      default:
+        break
+    }
+
+    switch (prevCard.value) {
+      case "KING":
+        VALUES.KING--
+        setValueProb(`${VALUES.KING} in ${remaningCardsCount - 1}`)
+        break
+      case "QUEEN":
+        VALUES.QUEEN--
+        setValueProb(`${VALUES.QUEEN} in ${remaningCardsCount - 1}`)
+        break
+      case "JACK":
+        VALUES.JACK--
+        setValueProb(`${VALUES.JACK} in ${remaningCardsCount - 1}`)
+        break
+      case "10":
+        VALUES.TEN--
+        setValueProb(`${VALUES.TEN} in ${remaningCardsCount - 1}`)
+        break
+      case "9":
+        VALUES.NINE--
+        setValueProb(`${VALUES.NINE} in ${remaningCardsCount - 1}`)
+        break
+      case "8":
+        VALUES.EIGHT--
+        setValueProb(`${VALUES.EIGHT} in ${remaningCardsCount - 1}`)
+        break
+      case "7":
+        VALUES.SEVEN--
+        setValueProb(`${VALUES.SEVEN} in ${remaningCardsCount - 1}`)
+        break
+      case "6":
+        VALUES.SIX--
+        setValueProb(`${VALUES.SIX} in ${remaningCardsCount - 1}`)
+        break
+      case "5":
+        VALUES.FIVE--
+        setValueProb(`${VALUES.FIVE} in ${remaningCardsCount - 1}`)
+        break
+      case "4":
+        VALUES.FOUR--
+        setValueProb(`${VALUES.FOUR} in ${remaningCardsCount - 1}`)
+        break
+      case "3":
+        VALUES.THREE--
+        setValueProb(`${VALUES.THREE} in ${remaningCardsCount - 1}`)
+        break
+      case "2":
+        VALUES.TWO--
+        setValueProb(`${VALUES.TWO} in ${remaningCardsCount - 1}`)
+        break
+      case "ACE":
+        VALUES.ACE--
+        setValueProb(`${VALUES.ACE} in ${remaningCardsCount - 1}`)
         break
       default:
         break
