@@ -11,9 +11,7 @@ import * as store from './store'
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store.store}>
-      <PersistGate loading={null} persistor={store.persistor}>
-        <App />
-      </PersistGate>
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

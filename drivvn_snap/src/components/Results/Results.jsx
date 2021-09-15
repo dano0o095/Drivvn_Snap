@@ -7,10 +7,10 @@ const Results = props => {
   return (
     <div className="container mb-5 mt-3">
       <div>
-        {`VALUE MATCHES ${totalValuesMatched}`}
+        {<h4>VALUE MATCHES {totalValuesMatched}</h4>}
       </div>
       <div>
-        {`SUIT MATCHES ${totalSuitesMatched}`}
+        {<h4>SUIT MATCHES {totalSuitesMatched}</h4>}
       </div>
     </div>
   )
