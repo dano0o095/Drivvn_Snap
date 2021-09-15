@@ -3,13 +3,16 @@ import React, { useState } from 'react'
 import './App.css'
 import CardArea from '../components/CardArea'
 import api from '../utils/api'
+import Results from '../components/Results'
 
 function App(props) {
+  const { setNewCard, setRemainingCardCount, remaningcardsCount } = props
 
   const handleClick = () => {
     api.drawCard()
       .then(res => {
-        props.setNewCard(res.cards[0])
+        setNewCard(res.cards[0])
+        setRemainingCardCount(res.remaining)
       })
   }
 
@@ -17,7 +20,10 @@ function App(props) {
     <div class="App container">
       <h1>SNAP!</h1>
       <CardArea />
-      <button type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
+      {remaningcardsCount > 0
+        && <button type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
+        || <Results />
+      }
     </div>
   )
 }

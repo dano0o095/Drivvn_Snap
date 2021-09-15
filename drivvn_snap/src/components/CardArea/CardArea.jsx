@@ -34,8 +34,6 @@ const CardArea = props => {
       {matchType && <h4>{matchType}</h4>}
       {prevCard && <img className="m-4 m-4" src={prevCard?.image} /> || <CardPlaceholder />}
       {newCard && <img className="m-4 m-4" src={newCard?.image} /> || <CardPlaceholder />}
-
-
     </div>
   )
 }

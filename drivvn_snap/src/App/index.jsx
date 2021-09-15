@@ -1,14 +1,18 @@
 import { connect } from 'react-redux'
 import App from './App'
-import { setNewCard } from '../store/cards/actions'
+import { setNewCard, setRemainingCardCount } from '../store/cards/actions'
 
 const mapStateToProps = state => ({
   newCard: state.cards.newCard,
+  remainingCardscount: state.cards.remaining
 })
 
 const mapDispatchToProps = dispatch => ({
   setNewCard: (state) => {
     dispatch(setNewCard(state))
+  },
+  setRemainingCardCount: (count) => {
+    dispatch(setRemainingCardCount(count))
   },
 })
 
