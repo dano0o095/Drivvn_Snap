@@ -5,7 +5,7 @@ import api from '../../utils/api'
 import CardPlaceholder from './CardPlaceholder'
 
 const CardArea = props => {
-  const { newCard, prevCard } = props
+  const { newCard, prevCard, totalValuesMatched, totalSuitesMatched, addValueMatched, AddSuitMatch } = props
 
   const [matchType, setMatchType] = useState('')
 
@@ -14,12 +14,18 @@ const CardArea = props => {
   }, [])
 
   useEffect(() => {
-    if (newCard?.suit === prevCard?.suit) {
-      setMatchType('SNAP SUIT!')
-    } else if (newCard?.value === prevCard?.value) {
-      setMatchType('SNAP VALUE!')
-    } else {
+    if (newCard === undefined) {
       setMatchType('')
+    } else {
+      if (newCard?.suit === prevCard?.suit) {
+        setMatchType('SNAP SUIT!')
+        AddSuitMatch()
+      } else if (newCard?.value === prevCard?.value) {
+        setMatchType('SNAP VALUE!')
+        addValueMatched()
+      } else {
+        setMatchType('')
+      }
     }
   }, [prevCard, newCard])
 

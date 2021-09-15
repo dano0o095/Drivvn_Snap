@@ -1,15 +1,20 @@
 import { connect } from 'react-redux'
 import CardArea from './CardArea'
-import { setNewCard } from '../../store/cards/actions'
+import { AddValueMatched, AddSuitMatched } from '../../store/cards/actions'
 
 const mapStateToProps = state => ({
   newCard: state.cards.newCard,
   prevCard: state.cards.prevCard,
+  totalValuesMatched: state.cards.matchedValues,
+  totalSuitesMatched: state.cards.matchedSuits
 })
 
 const mapDispatchToProps = dispatch => ({
-  setNewCard: (state) => {
-    dispatch(setNewCard(state))
+  addValueMatched: () => {
+    dispatch(AddValueMatched())
+  },
+  AddSuitMatch: () => {
+    dispatch(AddSuitMatched())
   },
 })
 

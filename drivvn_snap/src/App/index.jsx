@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import App from './App'
-import { setNewCard, setPrevCard } from '../store/cards/actions'
+import { setNewCard } from '../store/cards/actions'
 
 const mapStateToProps = state => ({
   newCard: state.cards.newCard,
@@ -9,9 +9,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setNewCard: (state) => {
     dispatch(setNewCard(state))
-  },
-  setPrevCard: (state) => {
-    dispatch(setPrevCard(state))
   },
 })
 
