@@ -117,8 +117,8 @@ const CardArea = props => {
       {matchType && <h4>{matchType}</h4>}
       {prevCard?.image && <img className="m-4 m-4" src={prevCard?.image} /> || <CardPlaceholder />}
       {newCard?.image && <img className="m-4 m-4" src={newCard?.image} /> || <CardPlaceholder />}
-      {suitProb && <h6>Probability of suit match: {suitProb}</h6>}
-      {valueProb && <h6>Probability of value match: {valueProb}</h6>}
+      {suitProb && <h6>{suitProb} chance to match suit</h6>}
+      {valueProb && <h6>{valueProb} chance to match value</h6>}
     </div>
   )
 }
