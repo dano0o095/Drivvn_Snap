@@ -6,7 +6,8 @@ const mapStateToProps = state => ({
   newCard: state.cards.newCard,
   prevCard: state.cards.prevCard,
   totalValuesMatched: state.cards.matchedValues,
-  totalSuitesMatched: state.cards.matchedSuits
+  totalSuitesMatched: state.cards.matchedSuits,
+  remaningCardsCount: state.cards.remaining
 })
 
 const mapDispatchToProps = dispatch => ({
