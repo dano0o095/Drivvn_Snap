@@ -5,7 +5,7 @@ import api from '../../utils/api'
 import CardPlaceholder from './CardPlaceholder'
 
 const CardArea = props => {
-  const { newCard, prevCard, totalValuesMatched, totalSuitesMatched, addValueMatched, AddSuitMatch } = props
+  const { newCard, prevCard, addValueMatched, AddSuitMatch } = props
 
   const [matchType, setMatchType] = useState('')
 
@@ -14,7 +14,7 @@ const CardArea = props => {
   }, [])
 
   useEffect(() => {
-    if (newCard === undefined) {
+    if (newCard && Object.keys(newCard).length === 0 && newCard.constructor === Object) { // check if object exists
       setMatchType('')
     } else {
       if (newCard?.suit === prevCard?.suit) {
@@ -32,8 +32,8 @@ const CardArea = props => {
   return (
     <div className="container mb-5 mt-3">
       {matchType && <h4>{matchType}</h4>}
-      {prevCard && <img className="m-4 m-4" src={prevCard?.image} /> || <CardPlaceholder />}
-      {newCard && <img className="m-4 m-4" src={newCard?.image} /> || <CardPlaceholder />}
+      {prevCard?.image && <img className="m-4 m-4" src={prevCard?.image} /> || <CardPlaceholder />}
+      {newCard?.image && <img className="m-4 m-4" src={newCard?.image} /> || <CardPlaceholder />}
     </div>
   )
 }
