@@ -56,5 +56,6 @@ As it stands I've not added any Linting rules as it's just me working on this ta
 ### Future improvments  
 The work here is by no means perfection and of course could be tidied up in places.  
 For example, you can see I started to develop the "Optional Requirements" - I would idealy revisit the logic for the probability calculator to condense this or perhaps re-write it.  
-I had an idea for animating the text for when you get a snap, but ran out of time. Ditto for adding sound effects.  
+The animation for getting a snap could be smoother and more "in your face" I think. Could also add animation for moving the card from the right pile to the left pile.  
+Add a "card flip" sound effect for when a card is drew.  
 
