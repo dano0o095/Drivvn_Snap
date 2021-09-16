@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import propTypes from 'prop-types'
+import React, { useEffect } from 'react'
+import { PropTypes } from 'prop-types'
 
 import api from '../../utils/api'
 import CardPlaceholder from './CardPlaceholder'
@@ -8,14 +8,16 @@ import { SUITS, VALUES } from '../../utils/consts'
 const CardArea = props => {
   const { newCard, prevCard, addValueMatched, AddSuitMatch, remaningCardsCount } = props
 
-  const [matchType, setMatchType] = useState('')
-  const [suitProb, setSuitProb] = useState('')
-  const [valueProb, setValueProb] = useState('')
+  const [matchType, setMatchType] = React.useState('')
+  const [suitProb, setSuitProb] = React.useState('')
+  const [valueProb, setValueProb] = React.useState('')
 
+  // Get a fresh deck of shuffled cards
   useEffect(() => {
     api.getNewDeck()
   }, [])
 
+  // Determine if it's a SNAP
   useEffect(() => {
     if (newCard && Object.keys(newCard).length === 0 && newCard.constructor === Object) { // check if object exists
       setMatchType('')
@@ -32,6 +34,8 @@ const CardArea = props => {
     }
   }, [prevCard, newCard])
 
+
+  // check the probability of matching an suit or value next
   useEffect(() => {
     switch (prevCard.suit) {
       case "HEARTS":
@@ -114,17 +118,25 @@ const CardArea = props => {
 
   return (
     <div className="container mb-5 mt-3">
-      {matchType && <h4>{matchType}</h4>}
-      {prevCard?.image && <img className="m-4 m-4" src={prevCard?.image} /> || <CardPlaceholder />}
-      {newCard?.image && <img className="m-4 m-4" src={newCard?.image} /> || <CardPlaceholder />}
-      {suitProb && <h6>{suitProb} chance to match suit</h6>}
-      {valueProb && <h6>{valueProb} chance to match value</h6>}
+      {matchType && <h4 data-testid="match-type">{matchType}</h4>}
+      {prevCard?.image && <img data-testid="previous-card-image" className="m-4 m-4" src={prevCard?.image} /> || <CardPlaceholder data-testid="card-placeholder-prev-card" />}
+      {newCard?.image && <img data-testid="new-card-image" className="m-4 m-4" src={newCard?.image} /> || <CardPlaceholder data-testid="card-placeholder-new-card" />}
+      {suitProb && <h6 data-testid="probability-suit">{suitProb} chance to match suit</h6>}
+      {valueProb && <h6 data-testid="probability-value">{valueProb} chance to match value</h6>}
     </div>
   )
 }
 
 CardArea.propTypes = {
+  newCard: PropTypes.object.isRequired,
+  prevCard: PropTypes.object.isRequired,
+  addValueMatched: PropTypes.func.isRequired,
+  AddSuitMatch: PropTypes.func.isRequired,
+  remaningCardsCount: PropTypes.number
+}
 
+CardArea.defaultProps = {
+  remaningCardsCount: 52
 }
 
 export default CardArea

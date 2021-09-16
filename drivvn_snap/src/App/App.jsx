@@ -5,7 +5,7 @@ import CardArea from '../components/CardArea'
 import api from '../utils/api'
 import Results from '../components/Results'
 
-function App(props) {
+const App = (props) => {
   const { setNewCard, setRemainingCardCount, remaningCardsCount } = props
 
   const handleClick = () => {
@@ -18,12 +18,12 @@ function App(props) {
 
   return (
     <div class="App container">
-      <h1>SNAP!</h1>
-      <CardArea />
-      <h6>{`${remaningCardsCount} cards remaining`}</h6>
+      <h1 data-testid="title">SNAP!</h1>
+      <CardArea data-testid="card-area" />
+      <h6 data-testid="cards-remaining-count">{`${remaningCardsCount} cards remaining`}</h6>
       {remaningCardsCount !== 0
-        && <button type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
-        || <Results />
+        && <button data-testid="draw-button" type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
+        || <Results data-testid="results" />
       }
     </div>
   )
