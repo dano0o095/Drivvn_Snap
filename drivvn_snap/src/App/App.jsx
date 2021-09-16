@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './App.css'
 import CardArea from '../components/CardArea'
@@ -22,8 +22,8 @@ const App = (props) => {
       <CardArea data-testid="card-area" />
       <h6 data-testid="cards-remaining-count">{`${remaningCardsCount} cards remaining`}</h6>
       {remaningCardsCount !== 0
-        && <button data-testid="draw-button" type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
-        || <Results data-testid="results" />
+        ? <button data-testid="draw-button" type="button" className="btn btn-primary btn-lg" onClick={() => handleClick()}>Draw card</button>
+        : <Results data-testid="results" />
       }
     </div>
   )

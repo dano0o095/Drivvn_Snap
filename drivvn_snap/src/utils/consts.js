@@ -1,3 +1,4 @@
+// inital number of suits in a new deck
 export let SUITS = {
   "HEARTS": 13,
   "DIAMONDS": 13,
@@ -5,6 +6,7 @@ export let SUITS = {
   "CLUBS": 13
 }
 
+// inital number of value cards in a new deck
 export let VALUES = {
   "KING": 4,
   "QUEEN": 4,

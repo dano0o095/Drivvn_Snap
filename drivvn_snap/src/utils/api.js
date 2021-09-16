@@ -8,6 +8,7 @@ const api = {
     return fetch(`${BASE_URL}/new/shuffle/?deck_count=1`)
       .then(response => response.json())
       .then(data => {
+        // set the deck ID returned from this call so other api calls can access the same deck
         deck_id = data.deck_id
       })
       .catch(error => catchErrors(error))

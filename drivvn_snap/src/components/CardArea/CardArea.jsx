@@ -35,7 +35,7 @@ const CardArea = props => {
   }, [prevCard, newCard])
 
 
-  // check the probability of matching an suit or value next
+  // check the probability of matching a suit or value next
   useEffect(() => {
     switch (prevCard.suit) {
       case "HEARTS":
@@ -119,8 +119,8 @@ const CardArea = props => {
   return (
     <div className="container mb-5 mt-3">
       {matchType && <h4 data-testid="match-type">{matchType}</h4>}
-      {prevCard?.image && <img data-testid="previous-card-image" className="m-4 m-4" src={prevCard?.image} /> || <CardPlaceholder data-testid="card-placeholder-prev-card" />}
-      {newCard?.image && <img data-testid="new-card-image" className="m-4 m-4" src={newCard?.image} /> || <CardPlaceholder data-testid="card-placeholder-new-card" />}
+      {prevCard?.image ? <img data-testid="previous-card-image" className="m-4 m-4" src={prevCard?.image} /> : <CardPlaceholder data-testid="card-placeholder-prev-card" />}
+      {newCard?.image ? <img data-testid="new-card-image" className="m-4 m-4" src={newCard?.image} /> : <CardPlaceholder data-testid="card-placeholder-new-card" />}
       {suitProb && <h6 data-testid="probability-suit">{suitProb} chance to match suit</h6>}
       {valueProb && <h6 data-testid="probability-value">{valueProb} chance to match value</h6>}
     </div>
