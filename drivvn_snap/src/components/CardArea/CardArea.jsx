@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { PropTypes } from 'prop-types'
 
+import './CardArea.css'
 import api from '../../utils/api'
 import CardPlaceholder from './CardPlaceholder'
 import { SUITS, VALUES } from '../../utils/consts'
@@ -118,9 +119,9 @@ const CardArea = props => {
 
   return (
     <div className="container mb-5 mt-3">
-      {matchType && <h4 data-testid="match-type">{matchType}</h4>}
+      {matchType && <h4 data-testid="match-type" id="snap-text">{matchType}</h4>}
       {prevCard?.image ? <img data-testid="previous-card-image" className="m-4 m-4" src={prevCard?.image} /> : <CardPlaceholder data-testid="card-placeholder-prev-card" />}
-      {newCard?.image ? <img data-testid="new-card-image" className="m-4 m-4" src={newCard?.image} /> : <CardPlaceholder data-testid="card-placeholder-new-card" />}
+      {newCard?.image ? <img data-testid="new-card-image" id="new-card" className="m-4 m-4" src={newCard?.image} /> : <CardPlaceholder data-testid="card-placeholder-new-card" />}
       {suitProb && <h6 data-testid="probability-suit">{suitProb} chance to match suit</h6>}
       {valueProb && <h6 data-testid="probability-value">{valueProb} chance to match value</h6>}
     </div>
