@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="container mb-5 mt-3"
+>
+  <div>
+    <h4
+      data-testid="valuesMatched"
+    >
+      VALUE MATCHES 
+      2
+    </h4>
+  </div>
+  <div>
+    <h4
+      data-testid="suitsMatched"
+    >
+      SUIT MATCHES 
+      7
+    </h4>
+  </div>
+</div>
+`;

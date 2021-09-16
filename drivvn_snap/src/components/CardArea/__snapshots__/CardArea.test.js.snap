@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot of finished game 1`] = `
+<div
+  className="container mb-5 mt-3"
+>
+  
+  <img
+    className="m-4 m-4"
+    data-testid="previous-card-image"
+    src="https://deckofcardsapi.com/static/img/KH.png"
+  />
+  <img
+    className="m-4 m-4"
+    data-testid="new-card-image"
+    src="https://deckofcardsapi.com/static/img/8C.png"
+  />
+  <h6
+    data-testid="probability-suit"
+  >
+    0 in 0
+     chance to match suit
+  </h6>
+  <h6
+    data-testid="probability-value"
+  >
+    0 in 0
+     chance to match value
+  </h6>
+</div>
+`;

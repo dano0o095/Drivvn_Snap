@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
   addValueMatched: () => {
     dispatch(AddValueMatched())
   },
-  AddSuitMatch: () => {
+  AddSuitMatched: () => {
     dispatch(AddSuitMatched())
   },
 })
