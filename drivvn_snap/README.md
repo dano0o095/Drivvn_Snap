@@ -45,7 +45,7 @@ The tests are written with Jest.
 
 ### Notes  
 The tests are very basic as I've not had to write frontend unit tests before in my current role. I took some time to learn the basics for this task, some of which I tried to implement but couldn't sucessfully get the desired outcome so removed the failing tests in that regard.  
-We cover our backend with xunit tests instead and have no frontend tests as standard accross the business.  
+We cover our backend with C# xunit tests instead and have no frontend tests as standard accross the business.  
 I had to comment out the PropTypes so that the tests can sucessfully run as there was a problem there with passing props that were marked as required in the tests.  
 
 I took the wireframe designs given in the task as a guide and not as absolutes. I used Bootstrap as the styling framework.  
